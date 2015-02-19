@@ -6,4 +6,5 @@ Just a toy compiler/interpreter to get started with ocaml parsing
 `make`
 
 ## Test
-`./bf < hello.bf`
+`./bf hello.bf`
+`./bf mandelbrot.bf`

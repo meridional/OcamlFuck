@@ -26,7 +26,7 @@ let sub (l,p,r) = (l, (p + 255) mod 256,r)
 let put (l,p,r) = output_char stdout (Char.chr p); (l,p,r)
 let get (l,_,r) = (l, Char.code (input_char stdin), r)
 
-let rec evalProg l e = fold l e (fun acc el -> eval el acc)
+let rec evalProg l e = try fold l e (fun acc el -> eval el acc) with _ -> e
 and eval ex ((left, p, right) as env) = match ex with
   | L -> moveLeft env
   | R -> moveRight env
